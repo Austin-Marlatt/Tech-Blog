@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS tech-Blog_db
+
+CREATE DATABASE tech-Blog_db
