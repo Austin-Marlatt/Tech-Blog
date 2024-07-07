@@ -1,0 +1,17 @@
+<div class="blog-posts">
+  {{#each blogPosts}}
+  <article class="card">
+    <div class="card-header flex-row justify-space-between">
+      <h2>
+        <a href="/blogPost/{{id}}">{{title}}</a>
+      </h2>
+      <div>
+        {{user.username}} Submitted this Post on {{formatDate createdAt}}
+      </div>
+    </div>
+    <div class="card-body">
+      {{body}}
+    </div>
+  </article>
+  {{/each}}
+</div>
