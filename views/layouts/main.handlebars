@@ -17,7 +17,7 @@
           {{#if loggedIn}}
             <li class='li-inline nav-item'><a href='#' id='logout'>Logout</a></li>
           {{else}}
-            <li class='li-inline nav-item'><a href='/login'>Login</a></li>
+            <li class='li-inline nav-item'><a href='/signIn'>Login</a></li>
           {{/if}}
         </ul>
       </nav>
@@ -28,9 +28,12 @@
   </main>
 
   <footer class="flex-row justify-center">
-    <a class="btn">Check Out the Repo</a>
+    <a class="btn" href="https://github.com/Austin-Marlatt/Tech-Blog">Check Out the Repo</a>
   </footer>
 
+  {{#if loggedIn}}
+      <script src='/js/signOut.js'></script>
+  {{/if}}
 </body>
 
 </html>
