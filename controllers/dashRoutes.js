@@ -18,11 +18,11 @@ router.get('/', withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
-  }
+  };
 });
 
 router.get('/newBlogPost', withAuth, (req, res) => {
-  res.render('newPost', {
+  res.render('newBlogPost', {
     signedIn: req.session.signed_in,
   });
 });

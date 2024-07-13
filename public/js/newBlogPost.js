@@ -4,7 +4,7 @@ const newBlogPost= async function (e) {
   const title = document.querySelector('input[name="blogPost-title"]').value;
   const body = document.querySelector('textarea[name="blogPost-body"]').value;
 
-  await fetch(`/api/posts`, {
+  await fetch(`/api/blogPosts/newBlogPost`, {
     method: 'POST',
     body: JSON.stringify({
       title,
@@ -13,7 +13,7 @@ const newBlogPost= async function (e) {
     headers: { 'Content-Type': 'application/json' },
   });
 
-  document.location.replace('/dashboard');
+  window.location.assign('/dashboard');
 };
 
 document

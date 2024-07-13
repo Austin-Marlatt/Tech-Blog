@@ -17,15 +17,16 @@ const updateBlogPost = async function (e) {
     },
   });
 
-  document.location.replace('/dashboard');
+  window.location.assign('/dashboard');
 };
+
 
 const deleteBlogPost = async function () {
   await fetch(`/api/blogPosts/${postId}`, {
     method: 'DELETE',
   });
 
-  document.location.replace('/dashboard');
+  window.location.assign('/dashboard');
 };
 
 document

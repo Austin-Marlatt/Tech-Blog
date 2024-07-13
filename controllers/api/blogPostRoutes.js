@@ -2,7 +2,18 @@ const router = require('express').Router();
 const { BlogPost } = require('../../models');
 const { withAuth } = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/newBlogPost', withAuth, async (req,res) => {
+  try {
+
+    res.render('newBlogPost', {
+      signedIn: req.session.signed_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/newBlogPost', withAuth, async (req, res) => {
   const body = req.body;
 
   try {
