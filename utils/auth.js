@@ -1,13 +1,13 @@
 // Custom middleware, handles authentification
 
-// If the user is not logged in, redirect the request to the login route
+// If the user is not signed in, redirect the current request to the signIn route instead
 const withAuth = (req, res, next) => {
-  if (!req.session.logged_in) {
-    res.redirect('/login');
+  if (!req.session.signed_in) {
+    res.redirect('/signIn');
   } else {
     next();
   }
 };
 
 // Export to use in controllers
-module.exports = withAuth;
+module.exports = { withAuth };

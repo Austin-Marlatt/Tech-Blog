@@ -1,19 +1,23 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Sign In</h2>
+<div class="card w-100 mb-3">
+  <div class="card-header bg-dark text-light text-center">
+    <h2 class="fs-1">Sign In</h2>
   </div>
-  <form id="login-form" class="card-body">
-    <div>
-      <label for="username-input-login" class="form-label">Username</label>
-      <input type="text" id="username-input-login" />
+    <div class="card-body fs-3 p-0">
+      <form id="signIn-form" class="card-body">
+        <div>
+          <label for="signIn-username" class="form-label">Username:</label>
+          <input type="text" id="signIn-username"/>
+        </div>
+          <label for="signIn-password" class="form-label">Password:</label>
+          <input type="password" id="signIn-password"/>
+        <div class="d-grid gap-2 pt-4">
+          <button type="submit" id="submit-btn" class="btn btn-outline-secondary fs-5">Submit</button>
+        </div>
+      </form>
     </div>
-    <div>
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <button type="submit" id="submit-btn" class="btn">Submit</button>
-    <a type="button" href="/signup">Click here to Sign Up</a>
-  </form>
+    <div class="card-footer text-body-secondary text-center bg-dark text-light">
+      <a type="button" href="/signUp" class="btn btn-outline-secondary fs-5">Click here to Sign Up</a>
+    </div> 
 </div>
 
 <script src="/js/signIn.js"></script>

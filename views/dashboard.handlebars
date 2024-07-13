@@ -1,8 +1,17 @@
-<div class="blog-posts list-group">
-  {{#each blogPosts}}
-  <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
-    <div>{{title}}</div>
-    <div>{{formatDate createdAt}}</div>
-  </a>
-  {{/each}}
-</div>
+{{#each blogPosts}}
+    <div class="card w-100 mb-3 text-center">
+      <div class="card-header bg-dark text-light">
+        <h5>{{{user.username}}}</h5>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{title}}</h3>
+        <p class="card-text fs-5">{{body}}</p>
+        <div class="d-grid gap-2">
+          <a class="btn btn-outline-secondary fs-5" href="/dashboard/updateBlogPost/{{id}}">Update</a>
+        </div>
+      </div>
+      <div class="card-footer text-body-secondary bg-dark text-light">
+        <h6>{{createdAt}}</h6>
+      </div>
+    </div>
+{{/each}}

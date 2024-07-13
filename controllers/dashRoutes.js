@@ -10,11 +10,11 @@ router.get('/', withAuth, async (req, res) => {
       },
     });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const blogPosts = postData.map((post) => post.get({ plain: true }));
 
     res.render('dashboard', {
-      posts,
-      loggedIn: req.session.logged_in,
+      blogPosts,
+      signedIn: req.session.signed_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -23,8 +23,7 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/newBlogPost', withAuth, (req, res) => {
   res.render('newPost', {
-    dashboard: true,
-    loggedIn: req.session.logged_in,
+    signedIn: req.session.signed_in,
   });
 });
 
@@ -33,11 +32,11 @@ router.get('/updateBlogPost/:id', withAuth, async (req, res) => {
     const postData = await BlogPost.findByPk(req.params.id);
 
     if (postData) {
-      const post = postData.get({ plain: true });
+      const blogPost = postData.get({ plain: true });
 
       res.render('updateBlogPost', {
-        post,
-        loggedIn: req.session.logged_in,
+        blogPost,
+        signedIn: req.session.signed_in,
       });
     } else {
       res.status(404).end();
