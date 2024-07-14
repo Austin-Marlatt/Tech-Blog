@@ -19,11 +19,11 @@ const blogPostComment = async function (e) {
         "Content-Type": "application/json",
       },
     });
-    // Reload the page if POST is successful, redirect to sign in view if not
+    // Reload the page if POST is successful, alert the user if not
     if (response.ok) {
       document.location.reload();
     } else {
-      document.location.replace("/signIn");
+    alert("Someting went wrong, Try again later.");
     }
   }
 };
