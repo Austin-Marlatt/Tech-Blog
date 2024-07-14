@@ -8,7 +8,7 @@ const blogPostComment = async function (e) {
   const body = document.querySelector('textarea[name="comment-content"]').value;
 
   // If there is input in the text area, send a post request to comments endpoint
-  if (content) {
+  if ( body ) {
     const response = await fetch("/api/comments/", {
       method: "POST",
       body: JSON.stringify({
