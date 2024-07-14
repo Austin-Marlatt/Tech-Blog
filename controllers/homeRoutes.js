@@ -7,9 +7,7 @@ const { BlogPost, Comment, User } = require("../models");
 router.get("/", async (req, res) => {
   try {
     // Finds all blog posts and returns them with their associated user
-    const postData = await BlogPost.findAll({
-      include: [User],
-    });
+    const postData = await BlogPost.findAll( {include: [User],} );
 
     // Returns them in an array
     const blogPosts = postData.map((post) => post.get({ plain: true }));
@@ -27,13 +25,7 @@ router.get("/blogPost/:id", async (req, res) => {
     // Find by ID
     const postData = await BlogPost.findByPk(req.params.id, {
       // Return with the associated user and comment(user) models
-      include: [
-        User,
-        {
-          model: Comment,
-          include: User,
-        },
-      ],
+      include: [ User, { model: Comment, include: [User], }, ],
     });
 
     if (postData) {

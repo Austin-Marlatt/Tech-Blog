@@ -21,7 +21,7 @@ const newBlogPost= async function (e) {
   window.location.assign('/dashboard');
 };
 
-// Button event listener for the new blog post form, executes function
+// Button event listener for the new blog post form, 
 document
   .querySelector('#blogPost-form')
   .addEventListener('submit', newBlogPost);
