@@ -34,7 +34,7 @@ router.get('/updateBlogPost/:id', withAuth, async (req, res) => {
     if (postData) {
       const blogPost = postData.get({ plain: true });
 
-      res.render('updateblogpost', {
+      res.render('updateBlogPost', {
         blogPost,
         signedIn: req.session.signed_in,
       });
