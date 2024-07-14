@@ -1,3 +1,6 @@
+// Logic for signing out
+
+// Requests sent to the signOut endpoint destroy the current session
 const signOut = async () => {
   const response = await fetch('/api/users/signOut', {
     method: 'POST',

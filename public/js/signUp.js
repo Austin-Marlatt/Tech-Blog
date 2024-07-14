@@ -1,3 +1,5 @@
+// Logic for sign up requests
+
 const signUp = async function (e) {
   e.preventDefault();
 

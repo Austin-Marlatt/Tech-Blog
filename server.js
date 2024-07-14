@@ -12,6 +12,7 @@ const app = express();
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({});
 
+// Session configuration
 const sess = {
   secret: 'Client Secret',
   cookie: {
@@ -28,7 +29,7 @@ const sess = {
 };
 
 app.use(session(sess));
-// Inform Express.js on which template engine to use
+// Tell express that we will be rendering the HTML within the handleabrs view engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -49,6 +50,7 @@ app.use(function (req, res, next) {
 
 app.use(routes);
 
+// Sequilize syncs wiith the db, then the app initializes
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
 });

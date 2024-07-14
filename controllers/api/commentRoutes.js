@@ -1,3 +1,6 @@
+// Handles `/api/comment/` endpoint requests
+
+// Required modules and middleware
 const router = require('express').Router();
 const { Comment } = require('../../models/');
 const { withAuth } = require('../../utils/auth');
