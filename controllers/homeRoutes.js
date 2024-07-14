@@ -30,7 +30,7 @@ router.get("/blogPost/:id", async (req, res) => {
     if (postData) {
       const blogPost = postData.get({ plain: true });
 
-      res.render("blogpost", { blogPost, signedIn: req.session.signed_in });
+      res.render("blogPost", { blogPost, signedIn: req.session.signed_in });
     } else {
       res.status(404).end();
     }
