@@ -6,11 +6,11 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-let PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create();
+const hbs = exphbs.create({});
 
 const sess = {
   secret: 'Client Secret',
