@@ -7,14 +7,15 @@ const User = require('./User');
 
 // A post can belong to a user when a User is deleted,
 // When a User is deleted, the Users Posts are deleted as well
-BlogPost.belongsTo(User, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE',
-});
 
 // A Blog Post can have many comments attached to it
 BlogPost.hasMany(Comment, {
   foreignKey: 'BlogPostId',
+  onDelete: 'CASCADE',
+});
+
+BlogPost.belongsTo(User, {
+  foreignKey: 'userId',
   onDelete: 'CASCADE',
 });
 

@@ -20,7 +20,7 @@ const blogPostComment = async function (e) {
     });
   
   // reload the page after the POST
-  window.location.assign('/');
+  location.reload();
 };
 
 // Event listener for the comment form submit button, executes function
