@@ -5,7 +5,7 @@ const blogPostComment = async function (e) {
 
   // Variables used to listen to the input fields for the blog post ID and the text content of a comment
   const blogPostId = document.querySelector('input[name="blogPost-id"]').value;
-  const content = document.querySelector('textarea[name="comment-content"]').value;
+  const body = document.querySelector('textarea[name="comment-content"]').value;
 
   // If there is input in the text area, send a post request to comments endpoint
   if (content) {
@@ -13,7 +13,7 @@ const blogPostComment = async function (e) {
       method: "POST",
       body: JSON.stringify({
         blogPostId,
-        content,
+        body,
       }),
       headers: {
         "Content-Type": "application/json",
