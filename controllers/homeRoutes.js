@@ -41,7 +41,7 @@ router.get("/blogPost/:id", async (req, res) => {
 
 router.get("/signIn", (req, res) => {
   try {
-    res.render("signin");
+    res.render("signIn");
   } catch (err) {
     res.status(500).json(err);
   }
