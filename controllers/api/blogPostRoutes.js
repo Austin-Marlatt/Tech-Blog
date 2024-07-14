@@ -4,7 +4,7 @@ const { withAuth } = require('../../utils/auth');
 
 router.get('/newBlogPost', withAuth, async (req,res) => {
   try {
-    res.render('newblogpost', {
+    res.render('newBlogPost', {
       signedIn: req.session.signed_in,
     });
   } catch (err) {
