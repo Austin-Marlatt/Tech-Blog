@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/newBlogPost', withAuth, (req, res) => {
-  res.render('newBlogPost', {
+  res.render('newblogpost', {
     signedIn: req.session.signed_in,
   });
 });
@@ -34,7 +34,7 @@ router.get('/updateBlogPost/:id', withAuth, async (req, res) => {
     if (postData) {
       const blogPost = postData.get({ plain: true });
 
-      res.render('updateBlogPost', {
+      res.render('updateblogpost', {
         blogPost,
         signedIn: req.session.signed_in,
       });

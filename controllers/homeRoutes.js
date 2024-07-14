@@ -30,7 +30,7 @@ router.get("/blogPost/:id", async (req, res) => {
     if (postData) {
       const blogPost = postData.get({ plain: true });
 
-      res.render("blogPost", { blogPost, signedIn: req.session.signed_in });
+      res.render("blogpost", { blogPost, signedIn: req.session.signed_in });
     } else {
       res.status(404).end();
     }
@@ -47,9 +47,9 @@ router.get("/signIn", (req, res) => {
   }
 });
 
-router.get("/signup", (req, res) => {
+router.get("/signUp", (req, res) => {
   try {
-    res.render("signUp");
+    res.render("signup");
   } catch (err) {
     res.status(500).json(err);
   }
