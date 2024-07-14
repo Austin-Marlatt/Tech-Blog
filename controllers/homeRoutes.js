@@ -49,7 +49,7 @@ router.get("/signIn", (req, res) => {
 
 router.get("/signUp", (req, res) => {
   try {
-    res.render("signup");
+    res.render("signUp");
   } catch (err) {
     res.status(500).json(err);
   }
