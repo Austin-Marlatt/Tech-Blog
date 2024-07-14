@@ -5,7 +5,7 @@ const blogPostComment = async function (e) {
   const content = document.querySelector('textarea[name="comment-content"]').value;
 
   if (content) {
-    const response = await fetch("/api/comments", {
+    const response = await fetch("/api/comments/", {
       method: "POST",
       body: JSON.stringify({
         blogPostId,

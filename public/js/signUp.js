@@ -9,7 +9,7 @@ const signUp = async function (e) {
     .value.trim();
 
   if (passwordInput.length >= 6 && passwordInput.length <= 24 && usernameInput) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/', {
       method: 'POST',
       body: JSON.stringify({
         username: usernameInput,
@@ -19,15 +19,11 @@ const signUp = async function (e) {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      window.location.assign('/dashboard');
     } else {
-      alert('Sign up request unsuccessful');
+      alert('Sign up unsuccessful.');
     }
-  } else {
-    alert(
-      'Please include both a username and password, and make sure your password is at least 8 characters long'
-    );
-  }
+  };
 };
 
 document

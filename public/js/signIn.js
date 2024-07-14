@@ -14,7 +14,7 @@ const signIn = async function (e) {
   });
 
   if (response.ok) {
-    document.location.replace("/dashboard");
+    window.location.assign('/dashboard');
   } else {
     alert("Sign In failed, Please try again.");
   }

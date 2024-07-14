@@ -5,7 +5,7 @@ const signOut = async () => {
   });
 
   if (response.ok) {
-    document.location.replace('/');
+    window.location.assign('/dashboard');
   } else {
     alert(response.statusText);
   }
